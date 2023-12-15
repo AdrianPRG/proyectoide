@@ -13,10 +13,11 @@
         <!--  Configure your data source, provider, and other properties here  -->
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/DBMAVEN"/>
-            <property name="jakarta.persistence.jdbc.user" value="ADRIAN"/>
-            <property name="jakarta.persistence.jdbc.password" value="ADRI" />
-            <property name="hibernate.hbm2ddl.auto" value="update" /> <!--value=create-drop --> <!--Actualiza tablas si no existe -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/BASEDATOS"/>
+            <property name="jakarta.persistence.jdbc.user" value="PASSWORD"/>
+            <property name="jakarta.persistence.jdbc.password" value="PASSWORD" />
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" /> <!--value=create-drop --> <!--Actualiza tablas si no existe -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <!--  Additional JPA properties  -->
         </properties>
     </persistence-unit>

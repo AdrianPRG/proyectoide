@@ -1,9 +1,4 @@
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "DIRECCION")
@@ -16,4 +11,10 @@ data class Direccion (
     private val nombredireccion:String,
     @Column(name = "LOCALIDAD")
     private val localidad:String,
-)
+    @OneToOne(mappedBy = "DIRECCION", fetch = FetchType.LAZY)
+    var empleado:Empleado?=null
+){
+    override fun toString(): String {
+        return "Direccion(iddireccion=$iddireccion, nombredireccion='$nombredireccion', localidad='$localidad', empleado=${empleado?.codigo})"
+    }
+}
